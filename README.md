@@ -1,6 +1,9 @@
 # Traffic Flow Prediction
 Traffic Flow Prediction with Neural Networks(SAEs、LSTM、GRU).
 
+## Requirements
+See requirements.txt.
+
 ## Train the model
 
 **Run command below to train the model:**
@@ -26,6 +29,12 @@ Data are obtained from the Caltrans Performance Measurement System (PeMS). Data 
 
 ```
 python main.py
+```
+
+If you want to plot visual representations for each of the models, add the "--plot-models" argument. Please note that this may be a pain to get working on Windows.
+
+```
+python main.py --plot-models
 ```
 
 These are the details for the traffic flow prediction experiment.
