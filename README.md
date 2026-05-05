@@ -34,7 +34,7 @@ Data are obtained from the Caltrans Performance Measurement System (PeMS). Data 
 python main.py
 ```
 
-If you want to plot visual representations for each of the models, add the "--plot-models" argument. Please note that this may be a pain to get working on Windows.
+If you want to generate visual representations for each of the models (which will be stored under "images/", add the "--plot-models" argument. Please note that this may require additional effort to get working on Windows.
 
 ```
 python main.py --plot-models
