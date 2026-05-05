@@ -11,6 +11,8 @@ from keras.utils import plot_model
 import sklearn.metrics as metrics
 import matplotlib as mpl
 import matplotlib.pyplot as plt
+import argparse
+
 warnings.filterwarnings("ignore")
 
 
@@ -94,6 +96,13 @@ def plot_results(y_true, y_preds, names):
 
 
 def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument(
+        "--plot-models",
+        action="store_true",
+        help="Generate a diagram for each of the models under './images/'. This may be a pain to get working on Windows.")
+    args = parser.parse_args()
+
     lstm = load_model('model/lstm.keras')
     gru = load_model('model/gru.keras')
     saes = load_model('model/saes.keras')
@@ -113,7 +122,10 @@ def main():
         else:
             X_test = np.reshape(X_test, (X_test.shape[0], X_test.shape[1], 1))
         file = 'images/' + name + '.png'
-        plot_model(model, to_file=file, show_shapes=True)
+
+        if args.plot_models:
+            plot_model(model, to_file=file, show_shapes=True)
+
         predicted = model.predict(X_test)
         predicted = scaler.inverse_transform(predicted.reshape(-1, 1)).reshape(1, -1)[0]
         y_preds.append(predicted[:288])
