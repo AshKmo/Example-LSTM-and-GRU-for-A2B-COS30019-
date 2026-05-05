@@ -33,7 +33,7 @@ def train_model(model, X_train, y_train, name, config):
         epochs=config["epochs"],
         validation_split=0.05)
 
-    model.save('model/' + name + '.h5')
+    model.save('model/' + name + '.keras')
     df = pd.DataFrame.from_dict(hist.history)
     df.to_csv('model/' + name + ' loss.csv', encoding='utf-8', index=False)
 
@@ -56,7 +56,7 @@ def train_seas(models, X_train, y_train, name, config):
     for i in range(len(models) - 1):
         if i > 0:
             p = models[i - 1]
-            hidden_layer_model = Model(input=p.input,
+            hidden_layer_model = Model(input=p.layers[0].input,
                                        output=p.get_layer('hidden').output)
             temp = hidden_layer_model.predict(temp)
 

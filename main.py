@@ -7,7 +7,7 @@ import numpy as np
 import pandas as pd
 from data.data import process_data
 from keras.models import load_model
-from keras.utils.vis_utils import plot_model
+from keras.utils import plot_model
 import sklearn.metrics as metrics
 import matplotlib as mpl
 import matplotlib.pyplot as plt
@@ -94,9 +94,9 @@ def plot_results(y_true, y_preds, names):
 
 
 def main():
-    lstm = load_model('model/lstm.h5')
-    gru = load_model('model/gru.h5')
-    saes = load_model('model/saes.h5')
+    lstm = load_model('model/lstm.keras')
+    gru = load_model('model/gru.keras')
+    saes = load_model('model/saes.keras')
     models = [lstm, gru, saes]
     names = ['LSTM', 'GRU', 'SAEs']
 
