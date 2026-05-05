@@ -1,8 +1,11 @@
 # Traffic Flow Prediction
 Traffic Flow Prediction with Neural Networks(SAEs、LSTM、GRU).
 
-## Requirements
-See requirements.txt.
+-## Requirement
+-- Python 3.14
+-- Tensorflow 2.21.0
+-- Keras 3.14.0
+-- scikit-learn 1.8.0
 
 ## Train the model
 
