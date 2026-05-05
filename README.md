@@ -2,10 +2,10 @@
 Traffic Flow Prediction with Neural Networks(SAEs、LSTM、GRU).
 
 ## Requirement
--- Python 3.14
--- Tensorflow 2.21.0
--- Keras 3.14.0
--- scikit-learn 1.8.0
+- Python 3.14
+- Tensorflow 2.21.0
+- Keras 3.14.0
+- scikit-learn 1.8.0
 
 You can install all requirements using:
 
