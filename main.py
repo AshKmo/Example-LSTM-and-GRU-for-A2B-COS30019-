@@ -117,13 +117,10 @@ def main():
 
     y_preds = []
     for name, model in zip(names, models):
-        if name == 'SAEs':
-            X_test = np.reshape(X_test, (X_test.shape[0], X_test.shape[1]))
-        else:
-            X_test = np.reshape(X_test, (X_test.shape[0], X_test.shape[1], 1))
-        file = 'images/' + name + '.png'
+        X_test = np.reshape(X_test, (X_test.shape[0], X_test.shape[1]))
 
         if args.plot_models:
+            file = 'images/' + name + '.png'
             plot_model(model, to_file=file, show_shapes=True)
 
         predicted = model.predict(X_test)
