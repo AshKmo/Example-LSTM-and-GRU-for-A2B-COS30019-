@@ -96,12 +96,14 @@ def main(argv):
     if args.model == 'lstm':
         m = model.get_lstm([12, 64, 64, 1])
         train_model(m, X_train, y_train, args.model, config)
-    if args.model == 'gru':
+    elif args.model == 'gru':
         m = model.get_gru([12, 64, 64, 1])
         train_model(m, X_train, y_train, args.model, config)
-    if args.model == 'seas':
+    elif args.model == 'saes':
         m = model.get_saes([12, 400, 400, 400, 1])
         train_saes(m, X_train, y_train, args.model, config)
+    else:
+        print(args.model + " is not a valid model type")
 
 
 if __name__ == '__main__':
